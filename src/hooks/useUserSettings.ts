@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
@@ -38,12 +37,6 @@ export const useUserSettings = () => {
 
       if (data) {
         setSettings(data);
-        // Apply theme to document
-        if (data.theme === 'dark') {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
       }
     } catch (error) {
       console.error('Error fetching settings:', error);
